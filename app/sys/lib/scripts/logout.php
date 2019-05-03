@@ -25,7 +25,7 @@
       }
     }
 
-    logger("LOGGED OUT: {$host}", $session['log']);
+    logger("LOGGED OUT: {$host}", $session['log'], $username);
 
     session_clear();
 

@@ -1,8 +1,8 @@
 <?php
 
-if( preg_match('/test/', $input)) { 
+if( $input == 'test') { 
 
-        $input = "";
+        $input = "test";
   
         $username = 'system';
 

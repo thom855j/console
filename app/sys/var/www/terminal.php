@@ -1,5 +1,4 @@
 <?php if(session()['auth']): ?>
-<meta http-equiv="refresh" content="1800;url=server.php?action=logout" />
 <div id="wrapper">
     
     <?php include 'templates/nav.php' ?>   

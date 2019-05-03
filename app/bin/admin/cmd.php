@@ -25,18 +25,25 @@ if(preg_match('/delete user/', $input)) {
 
   $del_user =  explode(' ', $input)[2];
 
-  $user_path[] = APP . "etc/passwd/{$host}/{$del_user}.dec";
+  if(empty($del_user)) {
+    return false;
+  }
 
-  array_push($user_path, APP . "../home/{$host}/{$username}");
+  $user_path[] = APP . "sys/etc/passwd/{$host}/{$del_user}.dec";
+
+  array_push($user_path, APP . "home/{$host}/{$del_user}");
 
   foreach ($user_path as $path) {
-     rrmdir($path);
+     rrmdir($path, true);
   }
 
   unset($user_path);
 
+  $username = "system";
 
-  $input = "$user USER ACCOUNT DELETED.";
+  logger("USER DELETED: {$del_user}", $session['log']);
+
+  $input = "'$del_user' USER ACCOUNT DELETED.";
  
 
 }

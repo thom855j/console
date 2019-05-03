@@ -21,8 +21,14 @@ function randColor() {
     }
 }
 
-function logger($text, $path) {
-    error_log(getTimestamp() . ' | ' . getVisitorIP() . ' - ' . $text . PHP_EOL, 3, $path);
+function logger($text, $path, $user) {
+    if ($user) {
+     $user = $user;
+    } else {
+     $user = getVisitorIP();
+    }
+    
+    error_log(getTimestamp() . ' | ' .  $user . ' - ' . $text . PHP_EOL, 3, $path);
 }
 
 function getTimestamp($full_date = true) {

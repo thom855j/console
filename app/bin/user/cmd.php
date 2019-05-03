@@ -27,9 +27,9 @@ if( preg_match('/ls/', $input)) {
 
 if( preg_match('/mkdir/', $input)) {
 
-    $dir = explode(' ', $input)[1];
+    $dir_name = explode(' ', $input)[1];
 
-    $dir = $session['storage'] .  $dir;
+    $dir = $session['storage'] .  $dir_name;
 
     if (!file_exists( $dir)) {
 
@@ -37,8 +37,53 @@ if( preg_match('/mkdir/', $input)) {
            
     }
 
-    $data = $input;
+     $input = "$dir_name CREATED.";
 }
+
+
+if(preg_match('/delete/', $input)) {
+
+  $del =  explode(' ', $input)[1];
+
+  if(empty($del)) {
+    return false;
+  }
+
+  $dir = $session['storage'] .  $del;
+
+  rrmdir($dir, true);
+
+  $input = "$del DELETED.";
+ 
+}
+
+if( preg_match('/makefile/', $input)) {
+
+  $cmd = $input; 
+
+  $input = str_replace('makefile','',$input);
+
+  $file = explode(' ', $input)[1];
+
+  $input = str_replace($file,'',$input);
+
+  $text = trim($input); 
+
+  file_put_contents($session['storage'] . $file, $text . PHP_EOL, FILE_APPEND);
+
+  $input = "$file CREATED.";
+
+}
+
+
+if( preg_match('/cat/', $input)) {
+
+  $file = explode(' ', $input)[1];
+
+ $input = file_get_contents($session['storage'] . $file);
+
+}
+
 
 if($input == 'clear') {
 

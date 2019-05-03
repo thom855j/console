@@ -27,7 +27,7 @@
 
     if( !session()['auth'] && !session()['password'] ){
 
-        $connection = cmdConnect($input, APP . 'sys/etc/passwd/');
+        $connection = cmdConnect(trim($input), APP . 'sys/etc/passwd/');
 
 
         if(!$connection) {
@@ -134,7 +134,7 @@
 
                 session(['auth', true], true);
 
-                logger("LOGGED INTO: {$host}", $session['log']);
+                logger("LOGGED INTO: {$host}", $session['log'], $username);
 
                 echo 'ok';
 
@@ -220,7 +220,7 @@
 
         session(['auth', true], true);
 
-        logger("LOGGED INTO: {$host}", $session['log']);
+        logger("LOGGED INTO: {$host}", $session['log'], $username);
 
         echo 'ok';
 
