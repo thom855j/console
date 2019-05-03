@@ -1,0 +1,101 @@
+/* CSS Document */
+
+@import url(https://fonts.googleapis.com/css?family=VT323);
+
+body, input, a {
+  background: #441B02;
+  color:  #DEA02C;
+  text-shadow: #DEA02C 0 -1px 35px;
+  font-family: 'VT323', Arial, Helvetica, sans-serif;;
+  font-size: 24px;
+  -webkit-font-smoothing: none;
+  line-height: 1.2;
+}
+  
+form, p, span {
+    margin:0;
+    padding:0;
+}
+
+tr td {
+  display: block;
+}
+
+/*
+form input[type="text"] {
+    text-transform: lowercase;
+}
+*/ 
+  
+a {
+    text-decoration:none; 
+}
+  
+a:hover { 
+    text-decoration:underline; 
+}
+
+.container {
+  padding: 25px;
+}
+  
+.wrapper, #loginform {
+    width: 100%;
+    border: none; 
+}
+  
+#loginform { 
+    padding-top:18px; 
+}
+  
+#loginform p { 
+    margin: 5px; 
+}
+  
+#terminal {
+    text-align:left;
+    border: 1px solid #441B02;
+    overflow:auto;
+}
+  
+#input {
+    width: 50%;
+    border: 1px solid #441B02;
+    font-size: 24px;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+  
+#submit { 
+    width: 60px; 
+}
+  
+.error { 
+    color: #ff0000; 
+}
+  
+.logout { 
+    float:right; 
+}
+  
+.response { 
+    margin:0 0 2px 0; 
+}
+
+
+/*
+ *  Scrollbar style
+ */
+
+#terminal::-webkit-scrollbar-track, #terminal::-webkit-scrollbar-corner
+{
+   
+    background-color: #441B02;
+}
+
+#terminal::-webkit-scrollbar
+{
+    background-color: #441B02;
+}
