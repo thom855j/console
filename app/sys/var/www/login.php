@@ -3,38 +3,40 @@
 <div id="wrapper">
     
     <?php include 'templates/nav.php' ?>
-    <div id="terminal" data-termynal data-ty-typeDelay="40" data-ty-lineDelay="250">  
-        <p data-ty="input"><?php echo getVisitorIP(), " CONNECTED TO TERMINAL ", $_SERVER['SERVER_ADDR'], " ON PORT ", $_SERVER['SERVER_PORT']; ?></p>
-        <br data-ty>
-        <p data-ty="input"> WELCOME TO <?php echo $_SERVER['SERVER_NAME']; ?>.</p>
-        <p data-ty="input">TERMINAL STATUS: ACTIVE</p>
-    
+    <div id="terminal" data-termynal data-ty-typeDelay="20" data-ty-lineDelay="250">  
+        <p data-ty="input">Trying...</p>
+        <p data-ty="input"><?php echo "Connected to USENET", " port ", $_SERVER['SERVER_PORT']; ?></p>
+
         <br data-ty>
 
-        <p data-ty="input">IT IS <?php echo date('H:i', time()), " on ", date('l, F d, Y'); ?>.</p>
         <?php if(isset($_COOKIE['session_visit'])): ?>
-        <p data-ty="input">LAST VISIT <?php echo $_COOKIE['session_visit']; ?></p>
+        <p data-ty="input">Last login: <?php echo $_COOKIE['session_visit']; ?></p>
         <?php endif; ?>
+        <p data-ty="input">Copyright (c) 1984-1989 Datalære.</p>
 
         <br data-ty>
 
-        <p data-ty="input">ALL CONNECTIONS ARE MONITORED AND RECORDED.</p>
-        <p data-ty="input">ANY MALICIOUS AND/OR UNAUTHORIZED ACTIVITY IS STRICTLY FORBIDDEN.</p>
-        <p data-ty="input">DISCONNECT IMMEDIATELY IF YOU ARE NOT AN AUTHORIZED USER!</p>
+        <p data-ty="input">RC759 CP/M 86 - UNIX Inspired System.</p>
 
         <br data-ty>
 
-        <p data-ty="input">LOGON:</p>
+        <p data-ty="input">Welcome to usenet!</p>
+        <p data-ty="input">It is <?php echo date('H:i', time()), " on ", date('l, F d, Y'); ?> in Denmark.</p>
+
+        <br data-ty>
+
+        <p data-ty="input">Type HELP for detailed command list.</p>
+        <p data-ty="input">Type NEWUSER to create an account.</p>
         
         <br data-ty>
     </div>
         <form name="message">
-            <span data-ty="input"><b>> </b> <input name="input" type="text" id="input" size="1024" /></span>
+            <span data-ty="input"><b>. </b> <input name="input" type="text" id="input" size="1024" /></span>
         </form>
         <br>
     <table data-ty="input">
           <tr>
-            <th>[ACTIVE TERMINALS]</th>
+            <th>[ACTIVE HOSTS]</th>
           </tr>
           <tr>
             <?php listHosts(APP . '/sys/dev/'); ?>

@@ -133,6 +133,11 @@ function getVisitorIP()
     return $ip;
 }
 
+function getCountryByIp($ip) {
+$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}"));
+echo $details->country;
+}
+
 function lastVisit() {
  
     $inTwoMonths = 60 * 60 * 24 * 60 + time();
