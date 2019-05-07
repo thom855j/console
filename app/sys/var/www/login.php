@@ -5,7 +5,7 @@
     <?php include 'templates/nav.php' ?>
     <div id="terminal" data-termynal data-ty-typeDelay="20" data-ty-lineDelay="250">  
         <p data-ty="input">Trying...</p>
-        <p data-ty="input"><?php echo "Connected to USENET", " port ", $_SERVER['SERVER_PORT']; ?></p>
+        <p data-ty="input"><?php echo "Connected to terminal", " port ", $_SERVER['SERVER_PORT']; ?></p>
 
         <br data-ty>
 
@@ -20,7 +20,7 @@
 
         <br data-ty>
 
-        <p data-ty="input">Welcome to usenet!</p>
+        <p data-ty="input">Welcome!</p>
         <p data-ty="input">It is <?php echo date('H:i', time()), " on ", date('l, F d, Y'); ?> in Denmark.</p>
 
         <br data-ty>
@@ -29,19 +29,11 @@
         <p data-ty="input">Type NEWUSER to create an account.</p>
         
         <br data-ty>
+
     </div>
         <form name="message">
-            <span data-ty="input"><b>. </b> <input name="input" type="text" id="input" size="1024" /></span>
+            <span data-ty="input" ><b>. </b> <input name="input" type="text" id="input" size="1024" /></span>
         </form>
-        <br>
-    <table data-ty="input">
-          <tr>
-            <th>[ACTIVE HOSTS]</th>
-          </tr>
-          <tr>
-            <?php listHosts(APP . '/sys/dev/'); ?>
-          </tr>
-    </table>
 </div>
 
 <script type="text/javascript">
