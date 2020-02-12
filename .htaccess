@@ -1,12 +1,4 @@
-#RewriteEngine On
-#RewriteCond %{HTTPS} !=on
-#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
+# This file is not needed.
+# But, for fallback reasons (if you don't route your vhost to /public), it will stay here.
 RewriteEngine on
-#1) redirect the client 
-RewriteCond %{THE_REQUEST} /index\.php/(.+)\sHTTP [NC]
-RewriteRule ^ /%1 [NE,L,R]
-#2)internally map 
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.+)$ /index.php/$1 [L]
+RewriteRule ^(.*) public/$1 [L]

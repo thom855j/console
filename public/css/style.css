@@ -2,14 +2,10 @@
 
 @import url(https://fonts.googleapis.com/css?family=VT323);
 
-body, input, a {
-  background: #441B02;
-  color:  #DEA02C;
-  text-shadow: #DEA02C 0 -1px 35px;
-  font-family: 'VT323', Arial, Helvetica, sans-serif;;
-  font-size: 24px;
+body, input, a, span {
+  background: #252a33;
   -webkit-font-smoothing: none;
-  line-height: 1.2;
+  color: #eee;
 }
   
 form, p, span {
@@ -36,7 +32,7 @@ a:hover {
 }
 
 .container {
-  padding: 25px;
+  padding-left: 50px;
 }
   
 .wrapper, #loginform {
@@ -54,14 +50,14 @@ a:hover {
   
 #terminal {
     text-align:left;
-    border: 1px solid #441B02;
+    border: 1px solid #252a33;
     overflow:auto;
 }
   
 #input {
     width: 50%;
-    border: 1px solid #441B02;
-    font-size: 24px;
+    border: 1px solid #252a33;
+    font-size: 18px;
 }
 
 textarea:focus, input:focus{
@@ -92,10 +88,10 @@ textarea:focus, input:focus{
 #terminal::-webkit-scrollbar-track, #terminal::-webkit-scrollbar-corner
 {
    
-    background-color: #441B02;
+    background-color: #252a33;
 }
 
 #terminal::-webkit-scrollbar
 {
-    background-color: #441B02;
+    background-color: #252a33;
 }
